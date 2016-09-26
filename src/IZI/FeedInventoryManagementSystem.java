@@ -13,7 +13,10 @@ public class FeedInventoryManagementSystem {
 	 * 
 	 */
 	
-	public int numberOfSpecies = 3;
+	private static Species species[];
+	private static  Animal animals[];
+	private static Feeder feeders[];
+	private static Feeding feedings[];
 	
 	public FeedInventoryManagementSystem() {
 		// TODO Auto-generated constructor stub
@@ -25,17 +28,16 @@ public class FeedInventoryManagementSystem {
 	public static void main(String[] args) {
 		System.out.println("BEGIN MAIN");
 		
-		Species species[];
-		Animal animals[];
-		Feeding feedings[];
-		
 		species = setupSpecies();
 		animals = setupAnimals(species);
-		feedings = setupFeedings(animals);
+		feeders = setupFeeders();
+		feedings = setupFeedings(animals, feeders);
 		
 		System.out.println("Animal #1 is: " + animals[0].getSpecies().getName() + " " +  animals[0].getName());
 
 	}
+
+
 
 	private static Species[] setupSpecies() {
 		Species species[] = new Species[3];
@@ -72,14 +74,34 @@ public class FeedInventoryManagementSystem {
 		return animals;
 	}
 	
-	private static Feeding[] setupFeedings(Animal[] theAnimals) {
+	private static Feeder[] setupFeeders() {
+		Feeder feeders[] = new Feeder[2];
+		
+		for(int index = 0; index < 2; index++) {
+			feeders[index] = new Feeder(index);
+		}
+		
+		feeders[0].setName("Joe");
+		feeders[1].setName("Jane");
+		
+		return feeders;
+	}
+	
+	private static Feeding[] setupFeedings(Animal[] theAnimals, Feeder[] theFeeders) {
 		Feeding feedings[] = new Feeding[3];
 		
 		for(int index = 0; index < 3; index++) {
-			feedings[index] = new Feeding(index);
+			feedings[index] = new Feeding();
 		}
 		
-
+		feedings[0].addNewFeeding(10, theFeeders[0]);
+		feedings[0].addNewFeeding(7, theFeeders[1]);
+		feedings[0].addNewFeeding(20, theFeeders[0]);
+		
 		return feedings;
+	}
+	
+	public Feeder getFeederById(int theFeederId) {
+		return feeders[theFeederId];
 	}
 }

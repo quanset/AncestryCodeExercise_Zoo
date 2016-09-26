@@ -3,16 +3,15 @@ package IZI;
 import java.util.Date;
 
 public class Feeding {
-	private int id;
+	private int id = 0; // Unique id
+	private int idCounter = 0; // Unique id counter
 	private int amount;  // How much was given to the animal for the feeding?
-	private Date times;   // What time was the animal fed?
+	private long time;   // What time was the animal fed?
 	private Feeder feeder;  // Who fed the animal?
 	
-	public Feeding(int theId) {
-		this.id = theId;
+	public Feeding() {
+		this.id = idCounter++;
 	}
-
-
 
 	public int getAmount() {
 		return amount;
@@ -22,12 +21,12 @@ public class Feeding {
 		this.amount = amount;
 	}
 
-	public Date getTimes() {
-		return times;
+	public long getTime() {
+		return time;
 	}
 
-	public void setTimes(Date times) {
-		this.times = times;
+	public void setTime(long time) {
+		this.time = time;
 	}
 
 	public Feeder getFeeder() {
@@ -36,5 +35,15 @@ public class Feeding {
 
 	public void setFeeder(Feeder feeder) {
 		this.feeder = feeder;
+	}
+	
+	public Feeding addNewFeeding(int theAmount, Feeder theFeeder) {
+		Feeding newFeeding = new Feeding();
+		
+		newFeeding.setAmount(theAmount);
+		newFeeding.setFeeder(theFeeder);
+		newFeeding.setTime(System.currentTimeMillis());
+
+		return newFeeding;
 	}
 }

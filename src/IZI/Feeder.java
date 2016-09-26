@@ -1,11 +1,12 @@
 package IZI;
 
 public class Feeder {
+	private int id;
 	private Zoo employer = null;
 	private String name = null;  // Used to track who provided the feeding.  TODO: Later phase, connect to employee CRM.
 	
-	public Feeder() {
-		// TODO Auto-generated constructor stub
+	public Feeder(int theId) {
+		id = theId;
 	}
 
 	public Zoo getEmployer() {
@@ -23,4 +24,6 @@ public class Feeder {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+
 }
