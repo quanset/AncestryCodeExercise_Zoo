@@ -1,8 +1,8 @@
 package IZI;
 
 public class Species {
-	public int id;  // unique id for each species
-	public String name;
+	private int id;  // unique id for each species
+	private String name;
 	
 	public Species(int theId) {
 		id = theId;

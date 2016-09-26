@@ -27,9 +27,11 @@ public class FeedInventoryManagementSystem {
 		
 		Species species[];
 		Animal animals[];
+		Feeding feedings[];
 		
 		species = setupSpecies();
 		animals = setupAnimals(species);
+		feedings = setupFeedings(animals);
 		
 		System.out.println("Animal #1 is: " + animals[0].getSpecies().getName() + " " +  animals[0].getName());
 
@@ -68,5 +70,16 @@ public class FeedInventoryManagementSystem {
 		//animals[2].setFeedings();
 		
 		return animals;
+	}
+	
+	private static Feeding[] setupFeedings(Animal[] theAnimals) {
+		Feeding feedings[] = new Feeding[3];
+		
+		for(int index = 0; index < 3; index++) {
+			feedings[index] = new Feeding(index);
+		}
+		
+
+		return feedings;
 	}
 }

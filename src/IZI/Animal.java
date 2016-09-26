@@ -5,10 +5,10 @@ package IZI;
  */
 
 public class Animal {
-	public int id;  // unique id for each animal
-	public Species species;
-	public String name;
-	public Feeding feedings[];
+	private int id;  // unique id for each animal
+	private Species species;
+	private String name;
+	private Feeding feedings[];
 	
 	public Animal(int theId) {
 		id = theId;
