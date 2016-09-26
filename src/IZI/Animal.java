@@ -1,4 +1,8 @@
 package IZI;
+/**
+ * @author Ken Fultz
+ *
+ */
 
 public class Animal {
 	public int id;  // unique id for each animal
