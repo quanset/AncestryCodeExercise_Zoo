@@ -25,20 +25,17 @@ public class FeedInventoryManagementSystem {
 	public static void main(String[] args) {
 		System.out.println("BEGIN MAIN");
 		
-		setupSpecies();
-				
-		setupAnimals();
+		Species species[];
+		Animal animals[];
+		
+		species = setupSpecies();
+		animals = setupAnimals(species);
+		
+		System.out.println("Animal #1 is: " + animals[0].getSpecies().getName() + " " +  animals[0].getName());
 
 	}
 
-	private static void setupAnimals() {
-		Animal animals[] = new Animal[3];
-		for(int index = 0; index < 3; index++) {
-			animals[index] = new Animal(index);
-		}
-	}
-
-	private static void setupSpecies() {
+	private static Species[] setupSpecies() {
 		Species species[] = new Species[3];
 		
 		for(int index = 0; index < 3; index++) {
@@ -48,6 +45,28 @@ public class FeedInventoryManagementSystem {
 		species[0].setName("Lion");
 		species[1].setName("Giraffe");
 		species[2].setName("Unicorn");
+		
+		return species;
 	}
 
+	private static Animal[] setupAnimals(Species[] theSpecies) {
+		Animal animals[] = new Animal[3];
+		for(int index = 0; index < 3; index++) {
+			animals[index] = new Animal(index);
+		}
+		
+		animals[0].setSpecies(theSpecies[0]);
+		animals[0].setName("Leo");
+		//animals[0].setFeedings();
+		
+		animals[1].setSpecies(theSpecies[1]);
+		animals[1].setName("Wilt");
+		//animals[1].setFeedings();
+		
+		animals[2].setSpecies(theSpecies[2]);
+		animals[2].setName("Unicron");
+		//animals[2].setFeedings();
+		
+		return animals;
+	}
 }
