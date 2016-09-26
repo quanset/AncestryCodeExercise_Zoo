@@ -6,6 +6,7 @@ public class Feeding {
 	private int id = 0; // Unique id
 	private int idCounter = 0; // Unique id counter
 	private int amount;  // How much was given to the animal for the feeding?
+	private Feed feedType;  // What is the type of feed?
 	private long time;   // What time was the animal fed?
 	private Feeder feeder;  // Who fed the animal?
 	
@@ -37,13 +38,28 @@ public class Feeding {
 		this.feeder = feeder;
 	}
 	
-	public Feeding addNewFeeding(int theAmount, Feeder theFeeder) {
+	public Feed getFeedType() {
+		return feedType;
+	}
+
+	public void setFeedType(Feed feedType) {
+		this.feedType = feedType;
+	}
+	
+	
+	
+	public Feeding createNewFeeding(int theAmount, Feed theFeed, Feeder theFeeder) {
 		Feeding newFeeding = new Feeding();
 		
 		newFeeding.setAmount(theAmount);
 		newFeeding.setFeeder(theFeeder);
+		newFeeding.setFeedType(theFeed);
 		newFeeding.setTime(System.currentTimeMillis());
+		
+		
 
 		return newFeeding;
 	}
+
+
 }

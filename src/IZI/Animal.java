@@ -37,4 +37,8 @@ public class Animal {
 	public void setFeedings(Feeding[] feedings) {
 		this.feedings = feedings;
 	}
+	
+	public void setNewFeeding(Feeding theFeeding) {
+		
+	}
 }
