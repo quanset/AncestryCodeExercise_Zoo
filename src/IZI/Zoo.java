@@ -14,4 +14,36 @@ public class Zoo {
 		name = zooName;
 	}
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Animal[] getAnimals() {
+		return animals;
+	}
+
+	public void setAnimals(Animal[] animals) {
+		this.animals = animals;
+	}
+
+	public Vendor[] getFeedVendors() {
+		return feedVendors;
+	}
+
+	public void setFeedVendors(Vendor[] feedVendors) {
+		this.feedVendors = feedVendors;
+	}
+
+	public Feed[] getFeed() {
+		return feed;
+	}
+
+	public void setFeed(Feed[] feed) {
+		this.feed = feed;
+	}
+
 }

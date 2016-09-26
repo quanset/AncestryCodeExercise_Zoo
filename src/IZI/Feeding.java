@@ -10,4 +10,28 @@ public class Feeding {
 	public Feeding() {
 		// TODO Auto-generated constructor stub
 	}
+
+	public int[] getAmounts() {
+		return amounts;
+	}
+
+	public void setAmounts(int[] amounts) {
+		this.amounts = amounts;
+	}
+
+	public Date[] getTimes() {
+		return times;
+	}
+
+	public void setTimes(Date[] times) {
+		this.times = times;
+	}
+
+	public Feeder getFeeder() {
+		return feeder;
+	}
+
+	public void setFeeder(Feeder feeder) {
+		this.feeder = feeder;
+	}
 }

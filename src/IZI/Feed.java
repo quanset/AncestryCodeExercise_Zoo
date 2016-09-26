@@ -8,4 +8,28 @@ public class Feed {
 	public Feed() {
 		// TODO Auto-generated constructor stub
 	}
+
+	public Vendor getVendor() {
+		return vendor;
+	}
+
+	public void setVendor(Vendor vendor) {
+		this.vendor = vendor;
+	}
+
+	public int getWeightRemaining() {
+		return weightRemaining;
+	}
+
+	public void setWeightRemaining(int weightRemaining) {
+		this.weightRemaining = weightRemaining;
+	}
+
+	public int getWaste() {
+		return waste;
+	}
+
+	public void setWaste(int waste) {
+		this.waste = waste;
+	}
 }

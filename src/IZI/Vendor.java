@@ -9,4 +9,34 @@ public class Vendor {
 	public Vendor() {
 		// TODO Auto-generated constructor stub
 	}
+
+
+	public Feed getFeedType() {
+		return feedType;
+	}
+
+
+	public void setFeedType(Feed feedType) {
+		this.feedType = feedType;
+	}
+
+
+	public String getContact() {
+		return contact;
+	}
+
+
+	public void setContact(String contact) {
+		this.contact = contact;
+	}
+
+
+	public int getReorderThreshold() {
+		return reorderThreshold;
+	}
+
+
+	public void setReorderThreshold(int reorderThreshold) {
+		this.reorderThreshold = reorderThreshold;
+	}
 }
